@@ -1,0 +1,2 @@
+module Customers::LostCatFavoritesHelper
+end

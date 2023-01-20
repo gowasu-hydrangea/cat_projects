@@ -1,0 +1,2 @@
+module Customers::CatCoffeeShopsHelper
+end

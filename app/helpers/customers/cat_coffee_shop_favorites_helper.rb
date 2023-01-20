@@ -1,0 +1,2 @@
+module Customers::CatCoffeeShopFavoritesHelper
+end

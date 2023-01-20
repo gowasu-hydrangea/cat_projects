@@ -1,0 +1,2 @@
+module Customers::LostCatCommentsHelper
+end
