@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   
-  
-  namespace :admins do
 
-  end
   root to: "customers/homes#top"
   get '/about' => 'customers/homes#about'
   
@@ -13,6 +10,7 @@ Rails.application.routes.draw do
     passwords:     'customers/passwords',
     registrations: 'customers/registrations'
   }
+  
   
   namespace :customers do
     
