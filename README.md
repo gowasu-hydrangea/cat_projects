@@ -1,24 +1,35 @@
-# README
+# cat_projects
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+### サイトテーマ
+保護猫愛好家が集まるSNSサイト。  
+保護猫カフェに関する投稿が閲覧できる。  
+迷い猫情報の閲覧も可能。
 
-Things you may want to cover:
+### テーマを選んだ理由
+自分自身猫が好きで、過去に保護猫カフェでアルバイトをしてました。  
+その際に毎年数千匹の猫が殺処分されているということを知り、保護猫に  
+興味を持っもらいたい、譲渡の数を少しでも増やして殺処分数を減らしたい、  
+雑種の猫も可愛い事を広めたい  
+という願いから、このテーマにしました。
 
-* Ruby version
+### ターゲットユーザ
+猫が好きな人  
+猫を家族に迎え入れたい人  
+猫カフェに行きたい人  
+脱走してしまった飼い猫を見つけたい人
 
-* System dependencies
+### 主な利用シーン
+近所の猫カフェに行きたいとき  
+猫を家族に迎え入れたいと考えたとき  
+脱走した飼い猫の目撃情報が欲しいとき
 
-* Configuration
+## 設計書
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
