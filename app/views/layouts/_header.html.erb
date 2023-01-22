@@ -16,7 +16,7 @@
               <!--会員ログイン時-->
               
                 <li>
-                  <%= link_to customers_customer_path(current_user.id), class:"nav-link text-light" do %>
+                  <%= link_to customers_customer_path(current_customer.id), class:"nav-link text-light" do %>
                     <i class="fa-solid fa-house"></i>
                     マイページ
                   <% end %>

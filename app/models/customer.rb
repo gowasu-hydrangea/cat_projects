@@ -11,7 +11,7 @@ class Customer < ApplicationRecord
   has_many :lost_cat_comments, dependent: :destroy
          
   validates :customer_name, presence: true
-  validates :is_deleted, presence: true
+  # validates :is_deleted, presence: true
   
   has_one_attached :profile_image
   

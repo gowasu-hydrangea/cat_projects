@@ -1,2 +1,36 @@
-<h1>Customers::Homes#top</h1>
-<p>Find me in app/views/customers/homes/top.html.erb</p>
+<!--<h1>Customers::Homes#top</h1>-->
+<!--<p>Find me in app/views/customers/homes/top.html.erb</p>-->
+
+    <div class="container">
+        <div class="row">
+            <div class='mx-auto'>
+                
+                <h1 class="px-3 mx-auto">
+                    ようこそ！
+                    <i class="fa-solid fa-paw"></i>
+                    保護猫プロジェクト
+                    <i class="fa-solid fa-paw"></i>
+                    へ！
+                </h1>
+                
+                <h4 class="px-5 mx-auto">
+                    当サイトは、個性豊かな保護猫ちゃんをたっぷり知ることができるSNSサイトとなっています！
+                </h4>
+                
+                <h4 class="px-5 mx-auto">
+                    会員登録なしでも、保護猫カフェの投稿や迷い猫情報を見ることができます！（投稿する場合には会員登録が必要となります。）
+                </h4>
+                
+                <div class="btn-wrapper col-10 mx-auto">
+                    <div class="row">
+                        <%= link_to 'みんなの保護猫カフェ', customers_cat_coffee_shops_path, class: "btn btn-outline-warning btn-lg btn-block mb-3" %>
+                    </div>
+                    
+                    <div class="row">
+                        <%= link_to '迷い猫情報', customers_lost_cats_path, class: "btn btn-outline-secondary btn-lg btn-block mb-3" %>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
