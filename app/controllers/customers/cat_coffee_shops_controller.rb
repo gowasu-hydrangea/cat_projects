@@ -16,9 +16,12 @@ class Customers::CatCoffeeShopsController < ApplicationController
   # 一覧表示
   def index
     @cat_coffee_shops = CatCoffeeShop.all
+    @cat_coffee_shop = CatCoffeeShop.new
+    @customer = current_customer
   end
 
   def show
+    
   end
 
   def edit
