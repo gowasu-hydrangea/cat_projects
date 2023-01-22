@@ -1,0 +1,39 @@
+<table class='table'>
+    
+    <tr>
+      <%= image_tag customer.get_profile_image, size:'100x100' %>
+    </tr>
+    
+    <tr>
+      <th><%= customer.customer_name %></th>
+    </tr>
+    
+    <tr>
+      <th><%= customer.status_message %></th>
+    </tr>
+    
+    <tr>
+      フォロー数
+    </tr>
+    
+    <tr>
+        フォロワー数
+    </tr>
+    
+</table>
+
+
+<div class='row'>
+    プロフィールを編集するボタン
+</div>
+
+
+<div class= 'row'>
+  <!--<% unless current_customer == customer %>-->
+  <!--  <% if current_customer.following?(customer) %>-->
+  <!--    <%= link_to "フォロー外す", customer_relationships_path(customer.id), class: "btn btn-secondary", method: :delete %>-->
+  <!--  <% else %>-->
+  <!--    <%= link_to "フォローする", customer_relationships_path(customer.id), class: "btn btn-primary", method: :post %>-->
+  <!--  <% end %>-->
+  <!--<% end %>-->
+</div>

@@ -1,0 +1,42 @@
+<table class='table table-hover table-inverse'>
+    
+    
+    <thead>
+        <tr>
+          <th></th>
+          <th>店名/最寄り駅</th>
+          <th>タイトル</th>
+          <th colspan="3"></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% cat_coffee_shops.each do |cat_coffee_shop| %>
+          <tr>
+              <td>
+                <%= link_to(cat_coffee_shop.customer) do %>
+                <%= image_tag cat_coffee_shop.customer.get_profile_image, size:'60x60' %>
+              </td>
+              
+              <td>
+                <%= link_to cat_coffee_shop.cat_coffee_shop_location,cat_coffee_shop %>
+              </td>
+              
+              <td>
+                <%= cat_coffee_shop.cat_coffee_shop_title %>
+              </td>
+              
+              <td id="cat_coffee_shop_favorite_buttons_<%= cat_coffee_shop.id %>">
+                  <%#= render 'cat_coffee_shop_favorites/favorite_botton', cat_coffee_shop: cat_coffee_shop %>
+              </td>
+                <%= link_to "コメント数: #{cat_coffee_shop.cat_coffee_shop_comments.count}", customer_cat_coffee_shop_path(cat_coffee_shop.id) %>
+              <td>
+                  
+              </td>
+              
+          </tr>
+        <% end %>
+    </tbody>
+    
+    
+</table>

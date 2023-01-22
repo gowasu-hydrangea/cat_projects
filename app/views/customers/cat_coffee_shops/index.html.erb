@@ -1,2 +1,32 @@
 <h1>Customers::CatCoffeeShops#index</h1>
 <p>Find me in app/views/customers/cat_coffee_shops/index.html.erb</p>
+
+<div class='container px-5 px-sm-0'>
+    <div class='row'>
+        
+        
+        <div class='col-md-3'>
+            <!--エラーメッセージ・部分テンプレート呼び出し-->
+            
+            <%#= render 'customers/info', customer: current_customer %>
+            
+            <div class="mt-3">
+                <%= link_to new_customers_cat_coffee_shop_path, class: "btn btn-warning btn-lg center-block mt-2 mb-2" do %>
+                保護猫カフェ情報をみんなに共有する！
+                <% end %>
+                
+                <%= link_to new_customers_lost_cat_path, class: "btn btn-warning btn-lg center-block mt-2 mb-2" do %>
+                もしあなたの猫ちゃんが脱走したら
+                <% end %>
+            </div>
+            
+        </div>
+        
+        <div class='col-md-8 offset-md-1'>
+            <h2>保護猫カフェ情報特集！</h2>
+            <%#= render 'index', cat_coffee_shops: @cat_coffee_shops %>
+        </div>
+        
+        
+    </div>
+</div>

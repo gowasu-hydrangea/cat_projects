@@ -21,6 +21,18 @@
                     会員登録なしでも、保護猫カフェの投稿や迷い猫情報を見ることができます！（投稿する場合には会員登録が必要となります。）
                 </h4>
                 
+                <h4 class="px-5 mx-auto">
+                    やり方は簡単！
+                </h4>
+                
+                <h4 class="px-5 mx-auto">
+                    ➀「みんなの保護猫カフェ」にGo！
+                </h4>
+                
+                <h4 class="px-5 mx-auto">
+                    ➁気になった投稿をクリック！もしかしたらあなたの近くにいて出会えるかも…！？
+                </h4>
+                
                 <div class="btn-wrapper col-10 mx-auto">
                     <div class="row">
                         <%= link_to 'みんなの保護猫カフェ', customers_cat_coffee_shops_path, class: "btn btn-outline-warning btn-lg btn-block mb-3" %>
@@ -28,6 +40,16 @@
                     
                     <div class="row">
                         <%= link_to '迷い猫情報', customers_lost_cats_path, class: "btn btn-outline-secondary btn-lg btn-block mb-3" %>
+                    </div>
+                </div>
+                
+                <div class="btn-wrapper col-6 mx-auto">
+                    <div class="row">
+                        <%= link_to '新規会員登録はこちら！',new_customer_registration_path, class: "btn btn-success btn-sm btn-block mb-3 sign_up" %>
+                    </div>
+                    
+                    <div class="row">
+                        <%= link_to 'すでに会員の方はこちら！',new_customer_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
                     </div>
                 </div>
                 
