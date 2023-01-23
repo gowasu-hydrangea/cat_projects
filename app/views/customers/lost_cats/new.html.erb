@@ -1,2 +1,35 @@
 <h1>Customers::LostCats#new</h1>
 <p>Find me in app/views/customers/lost_cats/new.html.erb</p>
+
+<div class='container'>
+    <div class='row'>
+        <div class="col-sm-12 col-md-8 col-lg-10 px-5 px-sm-0">
+            
+            <h2>猫ちゃんが脱走してから三日経っても見つからなかったら、、、</h2>
+            <h2>情報をできるだけ拡散しましょう。このページでは簡単にWeb版のポスター制作ができます。</h2>
+            <h2>脱走範囲付近に住んでいる会員の方が猫ちゃんを見かけるかもしれません。</h2>
+            
+            <%= form_with model: @lost_cat, url: '/customers/lost_cats', method: :post do |f| %>
+            
+              <h4>猫ちゃんのお名前/お住まいの都道府県名を教えてください</h4>
+              <%= f.text_field :lost_cat_title, placeholder: "例) たま / 東京都" %>
+              
+              <h4>猫ちゃんが脱走したと思われる地域(脱走範囲)を公表できる範囲で教えてください</h4>
+              <%= f.text_field :lost_cat_range, placeholder: "例) 東京都 渋谷区内 " %>
+              
+              <h4>猫ちゃんの特徴をお書きください</h4>
+              <%= f.text_area :lost_cat_introduction, placeholder: "150文字以内でお書きください" %>
+              
+              <h4>脱走した猫ちゃんの写真(体全体が写っているもの)</h4>
+              <%= f.file_field :image, accept: "image/*" %>
+              
+              <div class="actions">
+                  <%= f.submit '投稿する', class: "btn btn-success btn-lg center-block mt-2 mb-2" %>
+              </div>
+              
+            
+            <% end %>
+            
+        </div>
+    </div>
+</div>

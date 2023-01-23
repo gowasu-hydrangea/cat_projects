@@ -1,2 +1,38 @@
 <h1>Customers::CatCoffeeShops#show</h1>
 <p>Find me in app/views/customers/cat_coffee_shops/show.html.erb</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+            
+            <div>
+                <%= image_tag @cat_coffee_shop.get_image, size:'150x100' %>
+            </div>
+                        
+            <div>
+                <%= @cat_coffee_shop.cat_coffee_shop_location %>
+            </div>
+                        
+            <div>
+                <%= @cat_coffee_shop.cat_coffee_shop_title %>
+            </div>
+            
+            <div>
+                <%= link_to customers_customer_path(@cat_coffee_shop.id) do %>
+                <%= @cat_coffee_shop.customer.customer_name %>
+                <% end %>
+            </div>
+                        
+            <div>
+                <%= @cat_coffee_shop.cat_coffee_shop_introduction %>
+            </div>
+            
+            <div>
+                <% if @cat_coffee_shop == current_customer %>
+                  <%= link_to "投稿を削除", customers_cat_coffee_shop_path(@cat_coffee_shop), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger" %>
+                <% end %>
+            </div>
+            
+        </div>
+    </div>
+</div>

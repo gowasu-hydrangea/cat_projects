@@ -1,2 +1,25 @@
 <h1>Customers::Customers#show</h1>
 <p>Find me in app/views/customers/customers/show.html.erb</p>
+
+
+<div class='container px-5 px-sm-0'>
+    <div class='row'>
+        
+        <div class="col-md-3">
+            <%= render 'info', customer: @customer %>
+        </div>
+        
+        <div class="mt-3">
+            <!--新規 保護猫カフェ投稿画面 リンク-->
+        </div>
+        
+        <div class='col-md-8 offset-md-1'>
+            <!--会員さんが投稿した保護猫カフェ情報をみる！-->
+            <!--保護猫カフェ投稿 一覧遷移-->
+            <%= @customer.customer_name %>さんが投稿した
+            <%= link_to "保護猫カフェ情報", customers_cat_coffee_shops_path(@customer) %>
+            を見る！
+        </div>
+        
+    </div>
+</div>

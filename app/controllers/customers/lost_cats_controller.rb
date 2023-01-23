@@ -12,6 +12,7 @@ class Customers::LostCatsController < ApplicationController
   end
 
   def index
+    @lost_cats = LostCat.all
   end
 
   def show
