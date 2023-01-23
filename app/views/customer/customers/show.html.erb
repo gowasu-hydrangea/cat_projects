@@ -1,5 +1,5 @@
-<h1>Customers::Customers#show</h1>
-<p>Find me in app/views/customers/customers/show.html.erb</p>
+<!--<h1>Customers::Customers#show</h1>-->
+<!--<p>Find me in app/views/customers/customers/show.html.erb</p>-->
 
 
 <div class='container px-5 px-sm-0'>
@@ -8,7 +8,7 @@
         <div class="col-md-3">
             <%= render 'info', customer: @customer %>
             
-            <%= link_to new_customers_cat_coffee_shop_path, class: "btn btn-warning btn-lg center-block mt-2 mb-2" do %>
+            <%= link_to new_customer_cat_coffee_shop_path, class: "btn btn-warning btn-lg center-block mt-2 mb-2" do %>
             保護猫カフェ情報を共有する！
             <% end %>
         </div>
@@ -37,7 +37,7 @@
                         <td><%= image_tag cat_coffee_shop.image, size:'70x70' %></td>
                         <td><%= cat_coffee_shop.cat_coffee_shop_location %></td>
                         <td>
-                            <%= link_to customers_cat_coffee_shop_path(cat_coffee_shop.id) do %>
+                            <%= link_to customer_cat_coffee_shop_path(cat_coffee_shop.id) do %>
                             <%= cat_coffee_shop.cat_coffee_shop_title %>
                             <% end %>
                         </td>

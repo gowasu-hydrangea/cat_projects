@@ -16,7 +16,7 @@
               <!--会員ログイン時-->
               
                 <li>
-                  <%= link_to customers_customer_path(current_customer.id), class:"nav-link text-light" do %>
+                  <%= link_to customer_customer_path(current_customer.id), class:"nav-link text-light" do %>
                     <i class="fa-solid fa-house"></i>
                     マイページ
                   <% end %>
@@ -31,7 +31,7 @@
                 <!--</li>-->
                 
                 <li>
-                  <%= link_to customers_cat_coffee_shops_path, class:"nav-link text-light" do %>
+                  <%= link_to customer_cat_coffee_shops_path, class:"nav-link text-light" do %>
                     <i class="fa-solid fa-cat"></i>
                     <i class="fa-solid fa-mug-saucer"></i>
                     みんなの保護猫カフェ
@@ -50,13 +50,13 @@
               <!--管理者ログイン時-->
                 
                 <li>
-                  <%= link_to admins_customers_path, class:"nav-link text-light" do %>
+                  <%= link_to admin_customers_path, class:"nav-link text-light" do %>
                     会員一覧
                   <% end %>
                 </li>
                 
                 <li>
-                  <%= link_to admins_cat_coffee_shops_path, class:"nav-link text-light" do %>
+                  <%= link_to admin_cat_coffee_shops_path, class:"nav-link text-light" do %>
                     保護猫カフェ一覧
                   <% end %>
                 </li>

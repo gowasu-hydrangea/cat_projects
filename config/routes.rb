@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   }
   
   
-  namespace :customers do
+  namespace :customer do
     
       # get 'cat_coffee_shops/new'
       # get 'cat_coffee_shops/create'
@@ -47,7 +47,6 @@ Rails.application.routes.draw do
   end
   
   
-  
   # devise_for :admins
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
@@ -55,10 +54,8 @@ Rails.application.routes.draw do
     registrations: 'admins/registrations'
   }
   
-  namespace :admins do
-    
-      root to: "homes#top"
-    
+  namespace :admin do
+      get '/top' => 'homes#top'
       # get 'cat_coffee_shops/index'
       # get 'cat_coffee_shops/show'
       # get 'cat_coffee_shops/edit'

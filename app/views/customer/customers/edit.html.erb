@@ -1,12 +1,10 @@
-<h1>Customers::Customers#edit</h1>
-<p>Find me in app/views/customers/customers/edit.html.erb</p>
 
 <div class='container'>
     <div class='row'>
         <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
             <h2>プロフィール編集</h2>
             
-            <%= form_with model: @customer, url: customers_customer_path, method: :patch do |f| %>
+            <%= form_with model: @customer, url: customer_customer_path, method: :patch do |f| %>
             <%#= form_with model: @customer do |f| %>
             
             <!--エラーメッセージの部分テンプレート呼び出し-->

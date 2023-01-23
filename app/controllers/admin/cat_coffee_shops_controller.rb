@@ -1,4 +1,4 @@
-class Admins::CatCoffeeShopsController < ApplicationController
+class Admin::CatCoffeeShopsController < ApplicationController
   
   def index
     @cat_coffee_shops = CatCoffeeShop.all

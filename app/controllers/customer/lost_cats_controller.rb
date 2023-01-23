@@ -1,4 +1,4 @@
-class Customers::LostCatsController < ApplicationController
+class Customer::LostCatsController < ApplicationController
   
   def new
     @lost_cat = LostCat.new

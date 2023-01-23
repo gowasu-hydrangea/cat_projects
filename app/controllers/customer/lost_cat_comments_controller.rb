@@ -1,4 +1,4 @@
-class Customers::LostCatCommentsController < ApplicationController
+class Customer::LostCatCommentsController < ApplicationController
     
   def create
     lost_cat = LostCat.find(params[:lost_cat_id])

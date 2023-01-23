@@ -1,4 +1,4 @@
-class Customers::CatCoffeeShopCommentsController < ApplicationController
+class Customer::CatCoffeeShopCommentsController < ApplicationController
     
   def create
     cat_coffee_shop = CatCoffeeShop.find(params[:cat_coffee_shop_id])

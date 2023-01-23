@@ -1,19 +1,16 @@
-class Customers::CatCoffeeShopsController < ApplicationController
+class Customer::CatCoffeeShopsController < ApplicationController
   
-  # 投稿画面
   def new
     @cat_coffee_shop = CatCoffeeShop.new
   end
 
-  # 投稿データの保存
   def create
     @cat_coffee_shop = CatCoffeeShop.new(cat_coffee_shop_params)
     @cat_coffee_shop.customer_id = current_customer.id
     @cat_coffee_shop.save
-    redirect_to customers_cat_coffee_shops_path
+    redirect_to customer_cat_coffee_shops_path
   end
 
-  # 一覧表示
   def index
     @cat_coffee_shops = CatCoffeeShop.all
     @cat_coffee_shop = CatCoffeeShop.new
@@ -29,13 +26,15 @@ class Customers::CatCoffeeShopsController < ApplicationController
   end
 
   def update
+    @cat_coffee_shop = CatCoffeeShop.find(params[:id])
+    @cat_coffee_shop.update(cat_coffee_shop_params)
+    redirect_to customer_cat_coffee_shop_path(@cat_coffee_shop.id)
   end
 
-  # 投稿削除
   def destroy
     @cat_coffee_shop = CatCoffeeShop.find(params[:id])
     @cat_coffee_shop.destroy
-    redirect_to customers_cat_coffee_shops_path
+    redirect_to customer_cat_coffee_shops_path
   end
   
   private
