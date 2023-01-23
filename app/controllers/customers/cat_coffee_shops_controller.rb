@@ -25,6 +25,7 @@ class Customers::CatCoffeeShopsController < ApplicationController
   end
 
   def edit
+    @cat_coffee_shop = CatCoffeeShop.find(params[:id])
   end
 
   def update

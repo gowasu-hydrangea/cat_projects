@@ -16,9 +16,18 @@ class Customer < ApplicationRecord
   # validates :is_deleted, presence: true
   
   has_one_attached :profile_image
+  # has_one_attached :image
   
   def get_profile_image
     (profile_image.attached?) ? profile_image : 'no-image.jpg'
   end
+  
+  # def get_image
+  #     unless image.attached?
+  #       file_path = Rails.root.join('app/assets/images/no-image.jpg')
+  #       image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+  #     end
+  #       image
+  # end
   
 end

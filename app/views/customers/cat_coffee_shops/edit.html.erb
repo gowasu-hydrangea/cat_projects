@@ -1,2 +1,39 @@
 <h1>Customers::CatCoffeeShops#edit</h1>
 <p>Find me in app/views/customers/cat_coffee_shops/edit.html.erb</p>
+
+<div class='container'>
+    <div class='row'>
+        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+            <h2>投稿済みの保護猫カフェ情報を変更・編集することができます！</h2>
+            
+            <%= form_with model: @cat_coffee_shop, url: customers_cat_coffee_shop_path, method: :patch do |f| %>
+            
+                <div class="form-group">
+                    <%= f.label :cat_coffee_shop_location, "保護猫カフェの店名/最寄り駅" %>
+                    <%= f.text_field :cat_coffee_shop_location, placeholder: "例) 猫カフェ/渋谷駅", class: "form-control cat_coffee_shop_location" %>
+                </div>
+                
+                <div class="form-group">
+                    <%= f.label :cat_coffee_shop_title, "タイトル" %>
+                    <%= f.text_field :cat_coffee_shop_title, placeholder: "20文字以内でお書きください", class: "form-control cat_coffee_shop_title" %>
+                </div>
+                
+                <div class="form-group">
+                    <%= f.label :cat_coffee_shop_introduction, "ステータスメッセージ" %>
+                    <%= f.text_area :cat_coffee_shop_introduction, placeholder: "150文字以内でお書きください", class: "form-control cat_coffee_shop_introduction" %>
+                </div>
+                
+                <div class="form-group">
+                    <%= f.label :image, "推し猫の写真" %>
+                    <%= f.file_field :image, class: "form-control-file customer_image", accept: 'image/*' %>
+                </div>
+                
+                <div class="actions">
+                    <%= f.submit "以上の内容で変更を保存する！", class: "btn btn-success btn-lg center-block mt-2 mb-2" %>
+                </div>
+                
+            
+            <% end %>
+        </div>
+    </div>
+</div>
