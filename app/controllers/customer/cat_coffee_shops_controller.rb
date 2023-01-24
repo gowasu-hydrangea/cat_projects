@@ -24,6 +24,11 @@ class Customer::CatCoffeeShopsController < ApplicationController
 
   def edit
     @cat_coffee_shop = CatCoffeeShop.find(params[:id])
+    if @cat_coffee_shop.customer_id == current_customer.id
+      # render :edit
+    else
+      redirect_to customer_cat_coffee_shops_path
+    end
   end
 
   def update

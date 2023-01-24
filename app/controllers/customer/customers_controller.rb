@@ -16,6 +16,11 @@ class Customer::CustomersController < ApplicationController
 
   def edit
     @customer = Customer.find(params[:id])
+    if @customer == current_customer
+      render :edit
+    else
+      redirect_to customer_customer_path(current_customer)
+    end
   end
 
   def update
