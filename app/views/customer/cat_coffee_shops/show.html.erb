@@ -59,10 +59,21 @@
                 <tbody>
                     <% @cat_coffee_shop.cat_coffee_shop_comments.each do |cat_coffee_shop_comment| %>
                       <tr>
-                        <td><%= image_tag cat_coffee_shop_comment.customer.get_profile_image, size:'50x50' %>
+                        <td>
+                            <%= image_tag cat_coffee_shop_comment.customer.get_profile_image, size:'50x50' %>
                             <%= cat_coffee_shop_comment.customer.customer_name %>
                         </td>
+                        
                         <td><%= cat_coffee_shop_comment.cat_coffee_shop_comment %></td>
+                        
+                        <td>
+                          <% if cat_coffee_shop_comment.customer == current_customer %>
+                            <%= link_to customer_cat_coffee_shop_cat_coffee_shop_comment_path(cat_coffee_shop_comment.cat_coffee_shop, cat_coffee_shop_comment), method: :delete, class: "btn btn-outline-danger btn-sm center-block mt-2 mb-2" do %>
+                             コメントを削除
+                            <% end %>
+                          <% end %>
+                        </td>
+                        
                       </tr>
                     <% end %>
                 </tbody>
