@@ -19,6 +19,7 @@ class Customer::CatCoffeeShopsController < ApplicationController
 
   def show
     @cat_coffee_shop = CatCoffeeShop.find(params[:id])
+    @cat_coffee_shop_comment = CatCoffeeShopComment.new
   end
 
   def edit
