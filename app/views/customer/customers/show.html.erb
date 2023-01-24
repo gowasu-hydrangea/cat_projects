@@ -8,9 +8,17 @@
         <div class="col-md-3">
             <%= render 'info', customer: @customer %>
             
-            <%= link_to new_customer_cat_coffee_shop_path, class: "btn btn-warning btn-lg center-block mt-2 mb-2" do %>
-            保護猫カフェ情報を共有する！
-            <% end %>
+            <p>
+                <%= link_to cat_coffee_shop_favorites_customer_customer_path(@customer), class: "btn btn-outline-info btn-lg center-block mt-5 mb-2" do %>
+                  いいニャした投稿集！
+                 <% end %>
+            </p>
+            
+            <p>
+                <%= link_to new_customer_cat_coffee_shop_path, class: "btn btn-warning btn-lg center-block mt-2 mb-2" do %>
+                  保護猫カフェ情報を共有する！
+                <% end %>
+            </p>
         </div>
         
         <div class='col-md-8 offset-md-1'>

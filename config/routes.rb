@@ -4,12 +4,18 @@ Rails.application.routes.draw do
   root to: "customers/homes#top"
   get '/about' => 'customers/homes#about'
   
+  
   # devise_for :customers
   devise_for :customers, controllers: {
     sessions:      'customers/sessions',
     passwords:     'customers/passwords',
-    registrations: 'customers/registrations'
+    registrations: 'customers/registrations',
   }
+  
+  
+  devise_scope :customer do
+    post 'customers/guest_sign_in', to: 'customers/sessions#new_guest'
+  end
   
   
   namespace :customer do
@@ -22,7 +28,7 @@ Rails.application.routes.draw do
       # get 'cat_coffee_shops/update'
       # get 'cat_coffee_shops/destroy'
       resources :cat_coffee_shops, only: [:new,:create,:index,:show,:edit,:update,:destroy] do
-        resource :cat_coffee_shop_favorites, only: [:create, :destroy]
+        resource :cat_coffee_shop_favorites, only: [:create, :destroy] 
         resources :cat_coffee_shop_comments, only: [:create, :destroy]
       end
       
@@ -42,7 +48,11 @@ Rails.application.routes.draw do
       # get 'customers/show'
       # get 'customers/edit'
       # get 'customers/update'
-      resources :customers, only: [:index, :show, :edit, :update]
+      resources :customers, only: [:index, :show, :edit, :update] do
+        member do
+          get :cat_coffee_shop_favorites
+        end
+    end
       
   end
   

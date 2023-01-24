@@ -1,0 +1,30 @@
+
+  <tbody>
+    <tr>
+            
+      <td>
+        <%= image_tag cat_coffee_shop.image, size: "100x100" %>
+      </td>
+      <td>
+        <%= link_to cat_coffee_shop.customer.customer_name, customer_customer_path(cat_coffee_shop.customer.id) %>
+      </td>
+        
+      <td>
+        <%= link_to cat_coffee_shop.cat_coffee_shop_location, customer_cat_coffee_shop_path(cat_coffee_shop.id) %>
+      </td>
+      
+      <td>
+        <%= link_to cat_coffee_shop.cat_coffee_shop_title, customer_cat_coffee_shop_path(cat_coffee_shop.id) %>
+      </td>
+      
+      <td>
+        いいニャ数：<%= cat_coffee_shop.cat_coffee_shop_favorites.count %>
+      </td>
+      
+      <td>
+        コメント数：<%= cat_coffee_shop.cat_coffee_shop_comments.count %>
+      </td>
+        
+    </tr>
+  </tbody>
+  

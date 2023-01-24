@@ -2,6 +2,12 @@
 
 class Customers::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  def new_guest
+    customer = Customer.guest
+    # ユーザーをログインさせる
+    sign_in customer
+    redirect_to customer_cat_coffee_shops_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
 
   # GET /resource/sign_in
   # def new

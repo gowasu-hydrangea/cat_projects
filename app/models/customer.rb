@@ -22,6 +22,15 @@ class Customer < ApplicationRecord
     (profile_image.attached?) ? profile_image : 'no-image.jpg'
   end
   
+  def self.guest
+  find_or_create_by!(email: 'aaa@aaa.com') do |customer|
+    customer.password = SecureRandom.urlsafe_base64
+    customer.password_confirmation = customer.password
+    customer.customer_name = 'サンプル'
+    # customer.status_message = 'hi'
+  end
+  end
+  
   # def get_image
   #     unless image.attached?
   #       file_path = Rails.root.join('app/assets/images/no-image.jpg')

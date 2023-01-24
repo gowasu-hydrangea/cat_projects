@@ -10,7 +10,7 @@ class Customer::CatCoffeeShopCommentsController < ApplicationController
   
   def destroy
     CatCoffeeShopComment.find(params[:id]).destroy
-    # redirect_to customers_cat_coffee_shop_path(params[:cat_coffee_shop_id])
+    # redirect_to customer_cat_coffee_shop_path(params[:cat_coffee_shop_id])
   end
   
   private
