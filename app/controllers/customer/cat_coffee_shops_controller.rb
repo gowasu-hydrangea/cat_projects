@@ -27,8 +27,12 @@ class Customer::CatCoffeeShopsController < ApplicationController
 
   def update
     @cat_coffee_shop = CatCoffeeShop.find(params[:id])
-    @cat_coffee_shop.update(cat_coffee_shop_params)
-    redirect_to customer_cat_coffee_shop_path(@cat_coffee_shop.id)
+    if @cat_coffee_shop.update(cat_coffee_shop_params)
+      redirect_to customer_cat_coffee_shop_path(@cat_coffee_shop.id)
+      flash[:notice] = "変更が保存されました！内容をご確認ください"
+    else
+      render :edit
+    end
   end
 
   def destroy

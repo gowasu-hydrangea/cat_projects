@@ -14,7 +14,7 @@
         <% cat_coffee_shops.each do |cat_coffee_shop| %>
           <tr>
               <td>
-                <%= image_tag cat_coffee_shop.image, size:'70x70' %>
+                <%= image_tag cat_coffee_shop.get_image, size:'70x70' %>
               </td>
               
               <td>
@@ -29,6 +29,19 @@
               
               <td id="cat_coffee_shop_favorite_buttons_<%= cat_coffee_shop.id %>">
                   <%#= render 'cat_coffee_shop_favorites/favorite_botton', cat_coffee_shop: cat_coffee_shop %>
+                <% if cat_coffee_shop.favorited_by?(current_customer) %>
+                <p>
+                  <%#= link_to customer_cat_coffee_shop_cat_coffee_shop_favorites_path(cat_coffee_shop), method: :delete, remote: true do %>
+                    いいニャ数：<%= cat_coffee_shop.cat_coffee_shop_favorites.count %>
+                  <%# end %>
+                </p>
+                <% else %>
+                <p>
+                  <%#= link_to customer_cat_coffee_shop_cat_coffee_shop_favorites_path(cat_coffee_shop), method: :post, remote: true do %>
+                    いいニャ数：<%= cat_coffee_shop.cat_coffee_shop_favorites.count %>
+                  <%# end %>
+                </p>
+                <% end %>
               </td>
                 
               <td>

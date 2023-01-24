@@ -1,0 +1,13 @@
+              <% if cat_coffee_shop.cat_coffee_shop_favorited_by?(current_customer) %>
+              <p>
+                <%= link_to customer_cat_coffee_shop_favorites_path(cat_coffee_shop), method: :delete, remote: true do %>
+                ♥<%= cat_coffee_shop.cat_coffee_shop_favorites.count %>
+                <% end %>
+              </p>
+              <% else %>
+              <p>
+                <%= link_to customer_cat_coffee_shop_favorites_path(cat_coffee_shop), method: :post, remote: true do %>
+                ♡<%= cat_coffee_shop.cat_coffee_shop_favorites.count %>
+                <% end %>
+              </p>
+              <% end %>

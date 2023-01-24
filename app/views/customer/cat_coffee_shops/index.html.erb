@@ -4,6 +4,41 @@
             <!--エラーメッセージ・部分テンプレート呼び出し-->
             
             <%#= render 'customers/info', customer: @customer %>
+            <table class='table'>
+                <tr>
+                    <%= image_tag @customer.get_profile_image, size:'100x100' %>
+                </tr>
+                
+                <tr>
+                    <th><%= @customer.customer_name %></th>
+                </tr>
+                
+                <tr>
+                    <th><%= @customer.status_message %></th>
+                </tr>
+                
+                <tr>
+                    <th>フォロー数</th>
+                </tr>
+                
+                <tr>
+                    <th>フォロワー数</th>
+                </tr>
+                
+            </table>
+            
+            
+            <div class= 'row'>
+                
+            </div>
+            
+            
+            <div class='row'>
+                <%= link_to edit_customer_customer_path(@customer.id), class: "btn btn-outline-secondary btn-block" do %>
+                  プロフィールを編集する
+                  <% end %>
+            </div>
+            
             
             <div class="mt-3">
                 <%= link_to new_customer_cat_coffee_shop_path, class: "btn btn-warning btn-lg center-block mt-2 mb-2" do %>

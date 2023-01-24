@@ -41,7 +41,13 @@
                             <%= cat_coffee_shop.cat_coffee_shop_title %>
                             <% end %>
                         </td>
-                        <td>いいニャ数</td>
+                        <td id="cat_coffee_shop_favorite_buttons_<%= cat_coffee_shop.id %>">
+                          <% if cat_coffee_shop.favorited_by?(current_customer) %>
+                            <p>いいニャ数：<%= cat_coffee_shop.cat_coffee_shop_favorites.count %></p>
+                          <% else %>
+                            <p>いいニャ数：<%= cat_coffee_shop.cat_coffee_shop_favorites.count %></p>
+                          <% end %>
+                        </td>
                         <td>コメント数</td>
                     </tr>
                     <% end %>
