@@ -5,6 +5,16 @@
     </tr>
     
     <tr>
+        <% unless current_customer == customer %>
+        <% if current_customer.following?(customer) %>
+          <%= link_to "フォロー外す", customer_customer_relationships_path(customer.id), method: :delete, class: "btn btn-outline-primary btn-sm center-block md-2" %>
+        <% else %>
+          <%= link_to "フォローする", customer_customer_relationships_path(customer.id), method: :post, class: "btn btn-primary btn-sm center-block mt-2 mb-2" %>
+        <% end %>
+        <% end %>
+    </tr>
+    
+    <tr>
       <th>
         <!--current_customer以外の名前も表示する！-->
         <%= customer.customer_name %>
@@ -18,11 +28,13 @@
     </tr>
     
     <tr>
-      <!--フォロー数-->
+      <th>フォロー数</th>
+      <th><%= customer.followings.count %></th>
     </tr>
     
     <tr>
-        <!--フォロワー数-->
+      <th>フォロワー数</th>
+      <th><%= customer.followers.count %></th>
     </tr>
     
 </table>

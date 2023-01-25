@@ -1,4 +1,4 @@
-class Admins::LostCatsController < ApplicationController
+class Admin::LostCatsController < ApplicationController
   
   def index
     @lost_cats = LostCat.all

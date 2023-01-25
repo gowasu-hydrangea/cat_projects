@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
 
+  namespace :customer do
+    get 'relationships/followings'
+    get 'relationships/followers'
+  end
   root to: "customers/homes#top"
   get '/about' => 'customers/homes#about'
   
@@ -54,6 +58,9 @@ Rails.application.routes.draw do
         member do
           get :cat_coffee_shop_favorites
         end
+        resource :relationships, only: [:create, :destroy]
+        get 'followings' => 'relationships#followings', as: 'followings'
+        get 'followers' => 'relationships#followers', as: 'followers'
     end
       
   end

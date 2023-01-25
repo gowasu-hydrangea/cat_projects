@@ -11,6 +11,11 @@ class Customer < ApplicationRecord
   has_many :lost_cats, dependent: :destroy
   has_many :lost_cat_favorites, dependent: :destroy
   has_many :lost_cat_comments, dependent: :destroy
+  
+  has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+  has_many :followings, through: :relationships, source: :followed
+  has_many :followers, through: :reverse_of_relationships, source: :follower
          
   validates :customer_name, presence: true
   # validates :is_deleted, presence: true
@@ -43,12 +48,16 @@ class Customer < ApplicationRecord
     end
   end
   
-  # def get_image
-  #     unless image.attached?
-  #       file_path = Rails.root.join('app/assets/images/no-image.jpg')
-  #       image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
-  #     end
-  #       image
-  # end
+  def follow(customer_id)
+    relationships.create(followed_id: customer_id)
+  end
+  
+  def unfollow(customer_id)
+    relationships.find_by(followed_id: customer_id).destroy
+  end
+  
+  def following?(customer)
+    followings.include?(customer)
+  end
   
 end

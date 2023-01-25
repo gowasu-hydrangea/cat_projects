@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_20_161928) do
+ActiveRecord::Schema.define(version: 2023_01_25_120551) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -113,6 +113,13 @@ ActiveRecord::Schema.define(version: 2023_01_20_161928) do
     t.text "lost_cat_range", null: false
     t.text "lost_cat_introduction", null: false
     t.boolean "lost_cat_is_published_flag", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
