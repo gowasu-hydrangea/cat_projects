@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="col-xs-12">
+    <% if @model == "customer" %>
+    <h2>[<%= @content %>] の検索結果</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>会員名</th>
+                <th>ステータスメッセージ</th>
+            </tr>
+        </thead>
+    <% @records.each do |customer| %>
+        <tbody>
+            <tr>
+                <th>
+                    <%#= attachment_image_tag(customer, :profile_image, :fill, 40, 40, fallback: "no-image.jpg", size:'40x40') %>
+                    <%= image_tag customer.get_profile_image, size:'50x50' %>
+                </th>
+                <th>
+                    <%= customer.customer_name %>
+                </th>
+                <th>
+                    <%= customer.status_message %>
+                </th>
+            </tr>
+        </tbody>
+    <% end %>
+    <% elsif @model == "cat_coffee_shop" %>
+    <h2>[<%= @content %>]の検索結果</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>店名/最寄り駅</th>
+                <th>タイトル</th>
+            </tr>
+        </thead>
+        <% @records.each do |cat_coffee_shop| %>
+        <tbody>
+            <tr>
+                <th>
+                    <%#= attachment_image_tag(book.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
+                    <%= image_tag cat_coffee_shop.get_image, size:'50x50' %>
+                </th>
+                <th>
+                    <%= cat_coffee_shop.cat_coffee_shop_location %>
+                </th>
+                <th>
+                    <%= cat_coffee_shop.cat_coffee_shop_title %>
+                </th>
+            </tr>
+        </tbody>
+        <% end %>
+    <% end %>
+    </table>
+  </div>
+</div>

@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   
   namespace :customer do
     
+    get 'searches/search'
+    
       # get 'cat_coffee_shops/new'
       # get 'cat_coffee_shops/create'
       # get 'cat_coffee_shops/index'

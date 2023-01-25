@@ -24,4 +24,16 @@ class CatCoffeeShop < ApplicationRecord
         image
     end
     
+    def self.search_for(content, method)
+      if method == 'perfect'
+        CatCoffeeShop.where(cat_coffee_shop_location: content)
+      elsif method == 'forward'
+        CatCoffeeShop.where('cat_coffee_shop_location LIKE ?', content+'%')
+      elsif method == 'backward'
+        CatCoffeeShop.where('cat_coffee_shop_location LIKE ?', '%'+content)
+      else
+        CatCoffeeShop.where('cat_coffee_shop_location LIKE ?', '%'+content+'%')
+      end
+    end
+    
 end

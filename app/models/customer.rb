@@ -23,12 +23,24 @@ class Customer < ApplicationRecord
   end
   
   def self.guest
-  find_or_create_by!(email: 'aaa@aaa.com') do |customer|
-    customer.password = SecureRandom.urlsafe_base64
-    customer.password_confirmation = customer.password
-    customer.customer_name = 'サンプル'
-    # customer.status_message = 'hi'
+    find_or_create_by!(email: 'aaa@aaa.com') do |customer|
+      customer.password = SecureRandom.urlsafe_base64
+      customer.password_confirmation = customer.password
+      customer.customer_name = 'サンプル'
+      # customer.status_message = 'hi'
+    end
   end
+  
+  def self.search_for(content, method)
+    if method == 'perfect'
+      Customer.where(customer_name: content)
+    elsif method == 'forward'
+      Customer.where('customer_name LIKE ?', content + '%')
+    elsif method == 'backward'
+      Customer.where('customer_name LIKE ?', '%' + content)
+    else
+      Customer.where('customer_name LIKE ?', '%' + content + '%')
+    end
   end
   
   # def get_image
