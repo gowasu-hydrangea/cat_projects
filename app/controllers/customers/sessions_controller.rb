@@ -25,9 +25,24 @@ class Customers::SessionsController < Devise::SessionsController
   # end
 
   # protected
+  
+  # def after_sign_in_path_for(resource)
+  #   customer_customer_path(current_customer.id)
+  # end
+  
+  # def after_sign_out_path_for(resource)
+  #   root_path
+  # end
+  
+  # def configure_permitted_parameters
+    # devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
+    # devise_parameter_sanitizer.permit(:sign_in,keys:[:customer_name])
+      # devise_parameter_sanitizer.permit(:account_update,keys:[:customer_name,:email])
+  # end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params
-  #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
+  #   devise_parameter_sanitizer.permit(:sign_in, keys: [:customer_name])
   # end
+  
 end

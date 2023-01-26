@@ -42,7 +42,7 @@ class Customers::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:customer_name])
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -52,7 +52,8 @@ class Customers::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
-  #   super(resource)
+  #   # super(resource)
+  #   customer_customer_path(current_customer.id)
   # end
 
   # The path used after sign up for inactive accounts.

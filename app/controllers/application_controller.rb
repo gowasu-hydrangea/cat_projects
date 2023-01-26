@@ -3,21 +3,30 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   def after_sign_in_path_for(resource)
-    # 会員詳細ページ
-    customer_customer_path(current_customer.id)
+    case resource
+    when Admin
+      admin_cat_coffee_shops_path
+    when Customer
+      customer_customer_path(current_customer.id)
+    end
   end
   
   def after_sign_out_path_for(resource)
-    root_path
+    if resource == :admin
+      new_admin_session_path
+    else
+      root_path
+    end
   end
   
   protected
   
   def configure_permitted_parameters
     if resource_class == Customer
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:customer_name,:email])
       devise_parameter_sanitizer.permit(:sign_in,keys:[:customer_name])
-      # devise_parameter_sanitizer.permit(:account_update,keys:[:customer_name,:email])
+    else
+      devise_parameter_sanitizer.permit(:sign_in,keys:[:email])
     end
   end
   
