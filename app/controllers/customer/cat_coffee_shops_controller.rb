@@ -12,7 +12,7 @@ class Customer::CatCoffeeShopsController < ApplicationController
   end
 
   def index
-    @cat_coffee_shops = CatCoffeeShop.all
+    @cat_coffee_shops = CatCoffeeShop.page(params[:page])
     @cat_coffee_shop = CatCoffeeShop.new
     @customer = current_customer
   end
