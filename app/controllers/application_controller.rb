@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_customer!, except: [:top, :about]
+  # before_action :authenticate_customer!, except: [:top, :about]
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   def after_sign_in_path_for(resource)
     case resource
     when Admin
-      admin_cat_coffee_shops_path
+      admin_top_path
     when Customer
       customer_customer_path(current_customer.id)
     end
@@ -25,8 +25,8 @@ class ApplicationController < ActionController::Base
     if resource_class == Customer
       devise_parameter_sanitizer.permit(:sign_up, keys: [:customer_name,:email])
       devise_parameter_sanitizer.permit(:sign_in,keys:[:customer_name])
-    else
-      devise_parameter_sanitizer.permit(:sign_in,keys:[:email])
+    # else
+    #   devise_parameter_sanitizer.permit(:sign_in,keys:[:email])
     end
   end
   

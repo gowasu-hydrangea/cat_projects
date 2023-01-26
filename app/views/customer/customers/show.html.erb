@@ -22,12 +22,7 @@
         </div>
         
         <div class='col-md-8 offset-md-1'>
-            <!--会員さんが投稿した保護猫カフェ投稿の一覧-->
-            <h2>
-                <%= @customer.customer_name %>
-                さんの
-                保護猫カフェ情報特集！
-            </h2>
+          <h2><%= @customer.customer_name %>さんの保護猫カフェ情報特集!</h2>
             <%#= render 'cat_coffee_shops/index', cat_coffee_shops: @cat_coffee_shops %>
             <table class='table table-hover table-inverse'>
                 <thead>

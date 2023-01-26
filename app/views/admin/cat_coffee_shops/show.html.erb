@@ -1,2 +1,60 @@
-<h1>Admins::CatCoffeeShops#show</h1>
-<p>Find me in app/views/admins/cat_coffee_shops/show.html.erb</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+            
+            <div class="form-group">
+                <%= image_tag @cat_coffee_shop.get_image, size:'300x200' %>
+            </div>
+                        
+            <div>
+                <%= @cat_coffee_shop.cat_coffee_shop_location %>
+            </div>
+                        
+            <div>
+                <%= @cat_coffee_shop.cat_coffee_shop_title %>
+            </div>
+            
+            <div>
+                <%= link_to admin_customer_path(@cat_coffee_shop.customer.id) do %>
+                <%= @cat_coffee_shop.customer.customer_name %>
+                <% end %>
+            </div>
+                        
+            <div>
+                <%= @cat_coffee_shop.cat_coffee_shop_introduction %>
+            </div>
+            
+            <div>
+                いいニャ数：<%= @cat_coffee_shop.cat_coffee_shop_favorites.count %>
+                コメント件数：<%= @cat_coffee_shop.cat_coffee_shop_comments.count %>
+            </div>
+            
+            
+            <div>
+              <table>
+                  
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  
+                  <% @cat_coffee_shop.cat_coffee_shop_comments.each do |cat_coffee_shop_comment| %>
+                  <tbody>
+                      <tr>
+                        <td><%= image_tag cat_coffee_shop_comment.customer.get_profile_image, size:'50x50' %></td>
+                        <td><%= cat_coffee_shop_comment.customer.customer_name %></td>
+                        <td><%= cat_coffee_shop_comment.cat_coffee_shop_comment %></td>
+                      </tr>
+                  </tbody>
+                  <% end %>
+              </table>
+            </div>
+            
+            <div><%#= link_to "編集する", edit_admin_cat_coffee_shop_path(@cat_coffee_shop), class: "btn btn-lg btn-success center-block mt-2 mb-2" %></div>
+            
+        </div>
+    </div>
+</div>

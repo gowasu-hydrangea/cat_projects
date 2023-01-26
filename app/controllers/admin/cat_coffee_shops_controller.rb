@@ -5,10 +5,11 @@ class Admin::CatCoffeeShopsController < ApplicationController
   end
 
   def show
-    @cat_coffee_shop_comment = CatCoffeeShopComment.new
+    @cat_coffee_shop = CatCoffeeShop.find(params[:id])
   end
 
   def edit
+    @cat_coffee_shop = CatCoffeeShop.find(params[:id])
   end
 
   def update

@@ -1,2 +1,42 @@
-<h1>Admins::CatCoffeeShops#index</h1>
-<p>Find me in app/views/admins/cat_coffee_shops/index.html.erb</p>
+<div class='container'>
+  <div class='row'>
+    <h1 class="px-3 mx-auto">保護猫カフェ投稿 一覧</h1>
+    
+        <table class='table table-hover table-inverse'>
+          <thead>
+            <tr>
+              <th>投稿id</th>
+              <th>写真</th>
+              <th>店名/最寄り駅</th>
+              <th>タイトル</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          
+          <% @cat_coffee_shops.each do |cat_coffee_shop| %>
+          <tbody>
+            <tr>
+              <td><%= cat_coffee_shop.id %></td>
+              
+              <td><%= image_tag cat_coffee_shop.get_image, size:'70x70' %></td>
+              
+              <td><%= cat_coffee_shop.cat_coffee_shop_location %></td>
+              
+              <td>
+                <%= link_to admin_cat_coffee_shop_path(cat_coffee_shop.id) do %>
+                <%= cat_coffee_shop.cat_coffee_shop_title %>
+                <% end %>
+              </td>
+              
+              <td>いいニャ数：<%= cat_coffee_shop.cat_coffee_shop_favorites.count %></td>
+              
+              <td>コメント数：<%= cat_coffee_shop.cat_coffee_shop_comments.count %></td>
+              
+            </tr>
+          </tbody>
+          <% end %>
+        </table>
+    
+  </div>
+</div>
