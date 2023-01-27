@@ -22,7 +22,7 @@
 猫を家族に迎え入れたいと考えたとき
 
 ## 設計書
-[ER図とUI Flows](file:///C:/Users/gowasu373/Desktop/Downloads/cat_projects.drawio.pdf){:target="_blank"}
+[ER図とUI Flows](https://app.diagrams.net/#G1t7puDwdU0RqPBzh6OJiS7_M7Y1jU_y0Q){:target="_blank"}
 
 ## 開発環境
 - OS：Linux(CentOS)
