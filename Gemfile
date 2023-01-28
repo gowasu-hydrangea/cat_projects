@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  
+  # デバッグ用
+  gem 'pry-rails'
 end
 
 group :development do
@@ -62,8 +65,6 @@ gem 'devise'
 gem 'enum_help'
 # ページネーション使用
 gem 'kaminari','~> 1.2.1'
-# デバッグ用
-gem 'pry-rails'
 
 gem 'dotenv-rails'
 group :production do
