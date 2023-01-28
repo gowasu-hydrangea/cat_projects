@@ -1,9 +1,18 @@
-<h1>Admins::Homes#top</h1>
-<p>Find me in app/views/admins/homes/top.html.erb</p>
-
-
   <div class="container">
       <div class="row">
+        <h1 class="px-3 mx-auto">管理者 トップページ</h1>
+        
+          <div class="col-md-10 col-md-offset-1">
+            <%= link_to admin_customers_path, class:"btn btn-outline-info btn-lg mt-2 mb-2" do %>
+            会員の一覧をみる
+            <% end %>
+          </div>
+          
+          <div class="col-md-10 col-md-offset-1">
+            <%= link_to admin_cat_coffee_shops_path, class:"btn btn-outline-info btn-lg mt-2 mb-2" do %>
+            保護猫カフェの投稿一覧をみる
+            <% end %>
+          </div>
           
       </div>
   </div>
