@@ -2,7 +2,7 @@ class Customer < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :authentication_keys => [:customer_name]
          
   has_many :cat_coffee_shops, dependent: :destroy
   has_many :cat_coffee_shop_favorites, dependent: :destroy
