@@ -7,8 +7,11 @@ class Customer::CatCoffeeShopsController < ApplicationController
   def create
     @cat_coffee_shop = CatCoffeeShop.new(cat_coffee_shop_params)
     @cat_coffee_shop.customer_id = current_customer.id
-    @cat_coffee_shop.save
-    redirect_to customer_cat_coffee_shops_path
+    if @cat_coffee_shop.save
+      redirect_to customer_cat_coffee_shops_path
+    else
+      render :new
+    end
   end
 
   def index

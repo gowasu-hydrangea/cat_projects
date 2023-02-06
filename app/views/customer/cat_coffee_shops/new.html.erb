@@ -5,6 +5,15 @@
             
             <h2>保護猫カフェ情報をみんなに共有する！</h2>
             
+            <% if @cat_coffee_shop.errors.any? %>
+              <%= @cat_coffee_shop.errors.count %>件のエラーが発生しました
+              <ul>
+                <% @cat_coffee_shop.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            <% end %>
+            
             <%= form_with model: @cat_coffee_shop, url: '/customer/cat_coffee_shops', method: :post do |f| %>
               
               <h4>保護猫カフェの店名/最寄り駅をお書きください！</h4>
