@@ -6,7 +6,8 @@ class CatCoffeeShop < ApplicationRecord
     
     validates :cat_coffee_shop_location, presence: true
     validates :cat_coffee_shop_title, presence: true
-    validates :cat_coffee_shop_introduction, presence: true
+    validates :cat_coffee_shop_introduction, presence: true, length: {maximum:150}
+    
     enum cat_coffee_shop_is_published_flag: { public: 0, private: 1 }, _prefix: true
     
     has_many :cat_coffee_shop_favorites, dependent: :destroy
