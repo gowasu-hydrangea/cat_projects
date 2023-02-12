@@ -20,7 +20,7 @@ class Customer < ApplicationRecord
   validates :customer_name, presence: true
   # validates :is_deleted, presence: true
   
-  validates :status_message, presence: true, length: {maximum:20}
+  validates :status_message, length: {maximum:20}
   
   has_one_attached :profile_image
   # has_one_attached :image
