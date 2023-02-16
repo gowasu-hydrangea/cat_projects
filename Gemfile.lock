@@ -274,7 +274,7 @@ DEPENDENCIES
   enum_help
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
-  kaminari (~> 1.2.1)
+  kaminari
   listen (~> 3.3)
   mysql2
   net-imap

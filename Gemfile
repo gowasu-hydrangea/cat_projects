@@ -64,7 +64,7 @@ gem 'devise'
 # ステータス選択最適化
 gem 'enum_help'
 # ページネーション使用
-gem 'kaminari','~> 1.2.1'
+gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 
 gem 'dotenv-rails'
