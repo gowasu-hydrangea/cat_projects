@@ -6,9 +6,12 @@ class Customer::LostCatsController < ApplicationController
 
   def create
     @lost_cat = LostCat.new(lost_cat_params)
-    @lost_cat.customer_id = current_user.id
-    @lost_cat.save
-    redirect_to customers_lost_cats_path
+    @lost_cat.customer_id = current_customer.id
+    if @lost_cat.save
+      redirect_to customers_lost_cats_path
+    else
+      render :new
+    end
   end
 
   def index
