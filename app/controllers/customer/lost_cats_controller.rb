@@ -16,6 +16,7 @@ class Customer::LostCatsController < ApplicationController
 
   def index
     @lost_cats = LostCat.order(created_at: :desc).page(params[:page])
+    @lost_cat = LostCat.new
   end
 
   def show
