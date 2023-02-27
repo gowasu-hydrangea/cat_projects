@@ -20,6 +20,7 @@ class Customer::LostCatsController < ApplicationController
   end
 
   def show
+    @lost_cat = LostCat.find(params[:id])
   end
 
   def edit
