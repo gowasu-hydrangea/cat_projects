@@ -24,6 +24,7 @@ class Customer::LostCatsController < ApplicationController
   end
 
   def edit
+    @lost_cat = LostCat.find(params[:id])
   end
 
   def update
