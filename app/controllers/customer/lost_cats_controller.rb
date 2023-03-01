@@ -25,6 +25,10 @@ class Customer::LostCatsController < ApplicationController
 
   def edit
     @lost_cat = LostCat.find(params[:id])
+    if @lost_cat.customer_id == current_customer.id
+    else
+      redirect_to customer_lost_cats_path
+    end
   end
 
   def update
