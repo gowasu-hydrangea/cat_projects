@@ -32,6 +32,7 @@ class Customer::LostCatsController < ApplicationController
   end
 
   def update
+    @lost_cat = LostCat.find(params[:id])
   end
 
   def destroy
