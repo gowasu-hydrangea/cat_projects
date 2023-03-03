@@ -33,6 +33,12 @@ class Customer::LostCatsController < ApplicationController
 
   def update
     @lost_cat = LostCat.find(params[:id])
+    if @lost_cat.update(lost_cat_params)
+      redirect_to customer_lost_cats_path(@lost_cat.id)
+      flash[:notice] = "変更が保存されました。内容をご確認ください。"
+    else
+      render :edit
+    end
   end
 
   def destroy
