@@ -43,6 +43,8 @@ class Customer::LostCatsController < ApplicationController
 
   def destroy
     @lost_cat = LostCat.find(params[:id])
+    @lost_cat.destroy
+    redirect_to customer_lost_cats_path
   end
   
   private
