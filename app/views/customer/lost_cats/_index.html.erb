@@ -11,7 +11,12 @@
   
   <tbody>
     <% lost_cats.each do |lost_cat| %>
-      
+      <tr>
+        <td>
+          <%= image_tag lost_cat.get_image, size:'70x70' %>
+        </td>
+        
+      </tr>
     <% end %>
   </tbody>
   
