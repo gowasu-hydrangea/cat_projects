@@ -15,10 +15,14 @@
         <td>
           <%= image_tag lost_cat.get_image, size:'70x70' %>
         </td>
+        
         <td>
           <%= lost_cat.lost_cat_title %>
         </td>
         
+        <td>
+          <% lost_cat.lost_cat_range %>
+        </td>
       </tr>
     <% end %>
   </tbody>
