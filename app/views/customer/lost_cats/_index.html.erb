@@ -25,7 +25,9 @@
         </td>
         
         <td id="lost_cat_favorite_buttons_<%= cat_coffee_shop.id %>">
-          
+          <% if lost_cat.favorited_by?(current_customer) %>
+          <% else %>
+          <% end %>
         </td>
       </tr>
     <% end %>
