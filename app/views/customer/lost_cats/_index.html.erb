@@ -32,7 +32,11 @@
               <% end %>
             </p>
           <% else %>
-            <p></p>
+            <p>
+              <%= link_to customer_lost_cat_lost_cat_favorites_path(lost_cat), method: :post, remote: true do %>
+              いいニャ数：<%= lost_cat.lost_cat_favorites.count %>
+              <% end %>
+            </p>
           <% end %>
         </td>
       </tr>
