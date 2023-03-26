@@ -41,7 +41,7 @@
         </td>
         
         <td>
-          
+          <%= link_to "コメント数: #{lost_cat.lost_cat_comments.count}", customer_lost_cat_path(lost_cat.id) %>
         </td>
       </tr>
     <% end %>
