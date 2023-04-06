@@ -7,6 +7,9 @@
         <%= render 'index', customer: @customer %>
         
         <table class='table'>
+          <tr>
+            <%= image_tag @customer.get_profile_image, size:'100x100' %>
+          </tr>
           
         </table>
     </div>
