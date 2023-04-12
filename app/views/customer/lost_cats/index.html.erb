@@ -13,6 +13,9 @@
           
           <tr>
             <% unless current_customer == @customer %>
+              <% if current_customer.following?(@customer) %>
+              <% else %>
+              <% end %>
             <% end %>
           </tr>
         </table>
